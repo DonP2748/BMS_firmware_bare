@@ -1,0 +1,444 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: DonP DonP, DonP, LIC=BUURY-IIE97-TGX7T-RNYZQ-GG99S-7W7YZ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+H:\Download WorkSpace\CodeStorageSpace\DonPCodeSpace\MbeddedC\Automotive\BMS\project\BMS_firmware_bare\src\BMS_firmware_bare.uvprojx
+Project File Date:  02/14/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'BMS_firmware_bare'
+compiling rtc.c...
+compiling systimer.c...
+BMS_firmware_bare/service/bms.c(126): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                theta_2[i*5+j-1] = abs(bms->vol_cell[i*5+j-1]-bms->vol_pack);
+                                                 ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BMS_firmware_bare/service/bms.c(128): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                        if(group_check_cell_valid(balance_gr,j)){
+                                           ~~~~~~~~~~~~~~~~~~~~~~            ^
+BMS_firmware_bare/service/bms.c(130): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                                bq76940_cell_balancing(i*5+j);
+                                                ~~~~~~~~~~~~~~~~~~~~~~ ~~~^~
+BMS_firmware_bare/service/bms.c(166): warning: declaration shadows a variable in the global scope [-Wshadow]
+static void bms_update_info(bms_t *bms)
+                                   ^
+BMS_firmware_bare/service/bms.c(30): note: previous declaration is here
+static bms_t *bms = &_bms;
+              ^
+BMS_firmware_bare/service/bms.c(243): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
+        if((index >= 0)&(index <= 5)){
+            ~~~~~ ^  ~
+BMS_firmware_bare/service/bms.c(250): warning: unused parameter 'arg' [-Wunused-parameter]
+static void bms_set_state_battery(void* arg)
+                                        ^
+BMS_firmware_bare/service/bms.c(265): warning: unused parameter 'arg' [-Wunused-parameter]
+static void balance_release_lck(void *arg)
+                                      ^
+BMS_firmware_bare/service/bms.c(276): warning: unused parameter 'arg' [-Wunused-parameter]
+static void notify_release_lck(void* arg)
+                                     ^
+8 warnings generated.
+compiling bms.c...
+compiling log.c...
+BMS_firmware_bare/service/canbus.c(12): warning: In file included from...
+./BMS_firmware_bare/service/bms.h(14): warning: In file included from...
+./BMS_firmware_bare/main\config.h(14): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(8302): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(36): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_can.h(145): warning: padding size of 'CanTxMsg' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling canbus.c...
+BMS_firmware_bare/driver/hwi2c.c(12): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(32): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(8302): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(66): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_i2c.h(50): warning: padding size of 'I2C_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling hwi2c.c...
+compiling timer.c...
+compiling crc8.c...
+compiling gpio.c...
+BMS_firmware_bare/driver/bq76940.c(84): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        return (((4*adc_gain*(raw))/1000)+(NUMBER_OF_CELLS*adc_offset)); 
+        ~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BMS_firmware_bare/driver/bq76940.c(90): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        return (((raw*adc_gain)/1000)+adc_offset);
+        ~~~~~~  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+BMS_firmware_bare/driver/bq76940.c(98): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                        buff[index] = bq76940_read_cell_voltage(REG_VC1_HI_BYTE + index*2);
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~^~~~~~~~~
+BMS_firmware_bare/driver/bq76940.c(118): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+                        return (25000-((Vtsx-1200)*238))/10000; //celsius
+                        ~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+BMS_firmware_bare/driver/bq76940.c(129): warning: implicit conversion turns floating-point number into integer: 'double' to 'int32_t' (aka 'int') [-Wfloat-conversion]
+                        temp = 1 / (1 / (273 + 25) +  log(Rts / 10000)/THERMISTOR_CONST ); // K
+                             ~ ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BMS_firmware_bare/driver/bq76940.c(135): warning: implicit conversion turns floating-point number into integer: 'double' to 'int32_t' (aka 'int') [-Wfloat-conversion]
+                        temp = 1 / (1 / (273 + 25) +  log(Rts / 10000)/THERMISTOR_CONST ); // K
+                             ~ ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BMS_firmware_bare/driver/bq76940.c(141): warning: implicit conversion turns floating-point number into integer: 'double' to 'int32_t' (aka 'int') [-Wfloat-conversion]
+                        temp = 1 / (1 / (273 + 25) +  log(Rts / 10000)/THERMISTOR_CONST ); // K
+                             ~ ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BMS_firmware_bare/driver/bq76940.c(143): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+                        return (temp_sum/3 - 273); //temp average in Celsius
+                        ~~~~~~  ~~~~~~~~~~~^~~~~
+BMS_firmware_bare/driver/bq76940.c(158): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                cur = ((int32_t)raw*(844/R_SHUNT))/100;
+                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+BMS_firmware_bare/driver/bq76940.c(246): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        uint16_t data = (uint16_t)(bq76940_read_byte(reg))<<8|\
+                 ~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+BMS_firmware_bare/driver/bq76940.c(12): warning: In file included from...
+./BMS_firmware_bare/driver/timer.h(14): warning: In file included from...
+./BMS_firmware_bare/main\config.h(14): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(8302): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(54): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_exti.h(76): warning: padding size of 'EXTI_InitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+11 warnings generated.
+compiling bq76940.c...
+BMS_firmware_bare/driver/bq34z100.c(97): warning: unused function 'bq34z100_write_byte' [-Wunused-function]
+static void bq34z100_write_byte(uint8_t cmd,uint8_t data)
+            ^
+1 warning generated.
+compiling bq34z100.c...
+BMS_firmware_bare/driver/ds3231.c(57): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                ds3231_write_byte(DS3231_HOUR_REGISTER, (temp & 0b10111111));
+                                                                ^
+BMS_firmware_bare/driver/ds3231.c(65): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                ds3231_write_byte(DS3231_ALARM1_DAYDATE_REGISTER, (temp | 0b01000000));
+                                                                          ^
+BMS_firmware_bare/driver/ds3231.c(71): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                ds3231_write_byte(DS3231_ALARM2_DAYDATE_REGISTER, (temp | 0b01000000));
+                                                                          ^
+BMS_firmware_bare/driver/ds3231.c(95): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        *cHour &= 0b00111111;
+                  ^
+BMS_firmware_bare/driver/ds3231.c(101): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        *cMonth = (buff[5] & 0b01111111);
+                             ^
+BMS_firmware_bare/driver/ds3231.c(136): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        (temp | cAlarmName | 0b00000100):
+                             ^
+BMS_firmware_bare/driver/ds3231.c(163): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        return (ds3231_read_byte(DS3231_STATUS_REGISTER) & 0b10000000);
+                                                           ^
+BMS_firmware_bare/driver/ds3231.c(170): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        ds3231_write_byte(DS3231_STATUS_REGISTER, (temp & 0b01111111));
+                                                          ^
+BMS_firmware_bare/driver/ds3231.c(180): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        (temp | 0b00001000):
+                ^
+BMS_firmware_bare/driver/ds3231.c(181): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        (temp & 0b11110111));
+                ^
+BMS_firmware_bare/driver/ds3231.c(189): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+    uint8_t temp = (ds3231_read_byte(DS3231_CONTROL_REGISTER) & 0b11100111);
+                                                                ^
+BMS_firmware_bare/driver/ds3231.c(196): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+         (temp | 0b10000000): // set ~EOSC to 1, leave INTCN as is.
+                 ^
+BMS_firmware_bare/driver/ds3231.c(197): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+         (temp & 0b01111011)); // set ~EOSC to 0 and INTCN to zero.
+                 ^
+BMS_firmware_bare/driver/ds3231.c(207): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        (temp | 0b01000000): // turn on BBSQW flag
+                ^
+BMS_firmware_bare/driver/ds3231.c(208): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        (temp & 0b10110111)); // turn off BBSQW flag
+                ^
+15 warnings generated.
+compiling ds3231.c...
+compiling flash.c...
+compiling main.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/misc.c(132): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+                                               ~ ^~~~~~~~~~~
+1 warning generated.
+compiling misc.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_adc.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_adc.h(64): warning: padding struct 'ADC_InitTypeDef' with 2 bytes to align 'ADC_ExternalTrigConv' [-Wpadded]
+  uint32_t ADC_ExternalTrigConv;          /*!< Defines the external trigger used to start the analog
+           ^
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_adc.h(50): warning: padding size of 'ADC_InitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+2 warnings generated.
+compiling stm32f10x_adc.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_crc.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_cec.c(145): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmpreg = CEC->CFGR;
+         ~ ~~~~~^~~~
+1 warning generated.
+compiling stm32f10x_cec.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_can.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_can.h(145): warning: padding size of 'CanTxMsg' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_can.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_dac.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_exti.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_exti.h(76): warning: padding size of 'EXTI_InitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_gpio.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_i2c.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_i2c.h(50): warning: padding size of 'I2C_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_sdio.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_sdio.h(46): warning: padding size of 'SDIO_InitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_sdio.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_spi.h(87): warning: padding size of 'I2S_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(494): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = (uint16_t)1 << (uint16_t)itpos;
+         ~ ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(839): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(845): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = 0x01 << itmask;
+         ~ ~~~~~^~~~~~~~~
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(891): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_spi.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(51): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(726): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+             TIM_BDTRInitStruct->TIM_Break | TIM_BDTRInitStruct->TIM_BreakPolarity |
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(1983): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2013): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCNE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2058): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp1 = CCER_CCE_Set << (uint16_t)TIM_Channel;
+       ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_tim.c...
+compiling stm32f10x_wwdg.c...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_usart.c(23): warning: In file included from...
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_usart.h(50): warning: padding size of 'USART_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+F:/Pack_uV5/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_usart.c(1043): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = ((uint16_t)0x01 << (uint16_t)bitpos);
+         ~  ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+compiling stm32f10x_usart.c...
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=8206 RO-data=318 RW-data=4 ZI-data=2148  
+FromELF: creating hex file...
+".\Objects\BMS_firmware_bare.axf" - 0 Error(s), 58 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: ADC Version: 3.5.0
+   * Component: BKP Version: 3.5.0
+   * Component: CAN Version: 3.5.0
+   * Component: CEC Version: 3.5.0
+   * Component: CRC Version: 3.5.0
+   * Component: DAC Version: 3.5.0
+   * Component: DBGMCU Version: 3.5.0
+   * Component: DMA Version: 3.5.0
+   * Component: EXTI Version: 3.5.0
+   * Component: FSMC Version: 3.5.0
+   * Component: Flash Version: 3.5.0
+   * Component: Framework Version: 3.5.1
+   * Component: GPIO Version: 3.5.0
+   * Component: I2C Version: 3.5.0
+   * Component: IWDG Version: 3.5.0
+   * Component: PWR Version: 3.5.0
+   * Component: RCC Version: 3.5.0
+   * Component: RTC Version: 3.5.0
+   * Component: SDIO Version: 3.5.0
+   * Component: SPI Version: 3.5.0
+   * Component: TIM Version: 3.5.0
+   * Component: USART Version: 3.5.0
+   * Component: WWDG Version: 3.5.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_BMS_firmware_bare
+  F:\Pack_uV5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  F:\Pack_uV5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  F:\Pack_uV5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+
+   * Component: Keil::Device:StdPeriph Drivers:ADC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_adc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_adc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:BKP:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_bkp.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_bkp.h
+
+   * Component: Keil::Device:StdPeriph Drivers:CAN:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_can.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_can.c
+
+   * Component: Keil::Device:StdPeriph Drivers:CEC:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_cec.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_cec.h
+
+   * Component: Keil::Device:StdPeriph Drivers:CRC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_crc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_crc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DAC:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dac.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dac.h
+
+   * Component: Keil::Device:StdPeriph Drivers:DBGMCU:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dbgmcu.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dbgmcu.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dma.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dma.c
+
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_exti.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_exti.c
+
+   * Component: Keil::Device:StdPeriph Drivers:FSMC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_fsmc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_fsmc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Flash:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_flash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_flash.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_iwdg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_iwdg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:PWR:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_pwr.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_pwr.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rtc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rtc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SDIO:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_sdio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_sdio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_spi.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
+
+   * Component: Keil::Device:StdPeriph Drivers:WWDG:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_wwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_wwdg.c
+Build Time Elapsed:  00:00:15
+</pre>
+</body>
+</html>
